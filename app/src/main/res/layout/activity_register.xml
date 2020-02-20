@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".authentication.RegisterActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/reg_appbar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reg_toolbar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/close"
+                    android:src="@drawable/ic_arrow_back_black_24dp"
+                    android:layout_centerVertical="true"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:fontFamily="@font/good"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:text="Register"
+                    tools:ignore="RtlCompat" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reg_appbar">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:padding="30dp"
+        android:id="@+id/linear"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create New Account"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:fontFamily="@font/good"
+            android:textStyle="bold"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:id="@+id/name_input_reg"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
+            android:layout_marginTop="30dp"
+            android:textSize="16sp"
+            android:inputType="text"
+            android:fontFamily="@font/good"
+            app:met_baseColor="#000000"
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_maxCharacters="30"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:fontFamily="@font/good"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:id="@+id/email_input_reg"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:inputType="textEmailAddress"
+            app:met_baseColor="#000000"
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_maxCharacters="30"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:id="@+id/pass_input_reg"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:fontFamily="@font/good"
+            android:inputType="textVisiblePassword"
+            app:met_baseColor="#000000"
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_maxCharacters="30"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone no"
+            android:id="@+id/phone_input_reg"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:inputType="phone"
+            android:fontFamily="@font/good"
+            app:met_baseColor="#000000"
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_maxCharacters="30"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Organisation"
+            android:id="@+id/organization_input"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:inputType="text"
+            android:fontFamily="@font/good"
+            app:met_baseColor="#000000"
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_maxCharacters="30"
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/good"
+            android:id="@+id/register_btn"
+            android:textColor="#ffffff"
+            android:background="@drawable/button_design"
+            android:layout_marginTop="30dp"
+            android:text="Sign Up"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/already_account"
+        android:paddingLeft="30dp"
+        android:fontFamily="@font/good"
+        android:textStyle="bold"
+        android:text="Already have a account ?"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/linear"
+        android:layout_alignParentRight="true" />
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

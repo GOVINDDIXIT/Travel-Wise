@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Custompopup">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/curved_layout"
+        android:orientation="vertical"
+        app:layout_constraintCircleRadius="20dp">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profle_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="36dp"
+            app:civ_border_color="#000"
+            app:civ_border_width="1dp"
+            app:civ_circle_background_color="#000000" />
+
+        <TextView
+            android:id="@+id/username_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/good"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/email_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/good"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:text="govinddixit@gmail.com"
+            android:textStyle="bold" />
+
+        <!--        <Button-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:textColor="#ffff"-->
+        <!--            android:padding="8dp"-->
+        <!--            android:fontFamily="@font/good"-->
+        <!--            android:text="Request For Share Ride"-->
+        <!--            android:id="@+id/request"-->
+        <!--            android:background="@drawable/button_design"-->
+        <!--            android:layout_marginTop="30dp"-->
+        <!--            android:layout_gravity="center"/>-->
+        <Button
+            android:id="@+id/chating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_design"
+            android:fontFamily="@font/ps"
+            android:padding="8dp"
+            android:text="Chat"
+            android:textColor="#ffff" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

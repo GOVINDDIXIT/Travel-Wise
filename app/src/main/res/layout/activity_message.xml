@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Message">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/appbar_layout"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:id="@+id/toolbarmesage"
+            android:background="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/close"
+                android:background="@drawable/ic_arrow_back_black_24dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="25dp"
+                app:civ_circle_background_color="#ffffff"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/img_toolbar_mess"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:text="Username"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/good"
+                    android:textSize="20sp"
+                    android:layout_marginTop="3dp"
+                    android:id="@+id/username_toolbar_mess"/>
+
+
+            </LinearLayout>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:id="@+id/make_call"
+                android:src="@drawable/ic_phone_black_24dp"/>
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:padding="6dp"
+        android:background="#DCDCDC"
+        android:layout_below="@id/appbar_layout"
+        android:layout_above="@id/rellayout"
+        android:id="@+id/recycler_view_mess"
+        android:layout_height="match_parent">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/rellayout"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:padding="6dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/good"
+            android:hint="Type Your Message"
+            android:layout_toLeftOf="@id/send"
+            android:id="@+id/txt_message"/>
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_send_black_24dp"
+            android:id="@+id/send"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentEnd="true"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

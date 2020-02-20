@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Travel Wise</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="version">Version</string>
+    <string name="versionno">"1.0.0"</string>
+    <string name="request_type">received</string>
+
+
+</resources>

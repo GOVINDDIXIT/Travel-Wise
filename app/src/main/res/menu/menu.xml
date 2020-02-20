@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Main Menu"
+        android:icon="@drawable/ic_more_vert_black_24dp"
+        app:showAsAction="always">
+
+    <menu>
+        <item
+            android:title="My Journeys"
+            app:showAsAction="never"
+            android:icon="@drawable/ic_location_on_black_24dp"
+            android:id="@+id/uploadss"/>
+        <item
+            android:title="My Rides"
+            app:showAsAction="never"
+            android:icon="@drawable/journey"
+            android:id="@+id/myrides"/>
+        <item
+            android:title="My Profile"
+            app:showAsAction="never"
+            android:icon="@drawable/profile"
+            android:id="@+id/profile"/>
+
+        <item
+            android:title="Chats"
+            app:showAsAction="never"
+            android:icon="@drawable/comment"
+            android:id="@+id/chats"/>
+        <item
+            android:title="Logout"
+            app:showAsAction="never"
+            android:icon="@drawable/logout"
+            android:id="@+id/logout"/>
+    </menu>
+    </item>
+
+</menu>
