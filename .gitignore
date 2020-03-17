@@ -34,9 +34,9 @@ hs_err_pid*
 ### AndroidStudio Patch ###
 !/gradle/wrapper/gradle-wrapper.jar
 
-# End of https://www.gitignore.io/api/androidstudio
+# End of https://www.gitignore.io/geoCodingApi/androidstudio
 
-################################# Created by https://www.gitignore.io/api/android (modified) #################################
+################################# Created by https://www.gitignore.io/geoCodingApi/android (modified) #################################
 
 ### Android ###
 # Built application files
@@ -88,9 +88,9 @@ freeline_project_description.json
 ### Android Patch ###
 gen-external-apklibs
 
-# End of https://www.gitignore.io/api/android
+# End of https://www.gitignore.io/geoCodingApi/android
 
-################################# Created by https://www.gitignore.io/api/crashlytics #################################
+################################# Created by https://www.gitignore.io/geoCodingApi/crashlytics #################################
 
 ### Crashlytics ###
 #Crashlytics
@@ -99,9 +99,9 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 fabric.properties
 
-# End of https://www.gitignore.io/api/crashlytics
+# End of https://www.gitignore.io/geoCodingApi/crashlytics
 
-################################# Created by https://www.gitignore.io/api/osx #################################
+################################# Created by https://www.gitignore.io/geoCodingApi/osx #################################
 
 ### OSX ###
 *.DS_Store
@@ -130,4 +130,4 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# End of https://www.gitignore.io/api/osx
+# End of https://www.gitignore.io/geoCodingApi/osx
