@@ -18,7 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MyRides"></activity>
+        <activity android:name=".activity.CreateGroup"></activity>
+        <activity android:name=".activity.MyGroups" />
+        <activity android:name=".activity.MyRides" />
         <activity android:name=".activity.EditImage" />
         <activity android:name=".activity.Splash">
             <intent-filter>
@@ -43,7 +45,7 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Converstion" />
+        <activity android:name=".activity.Conversation" />
         <activity android:name=".authentication.ResetPassword" />
         <activity android:name=".activity.Working" />
         <activity android:name=".authentication.RegisterActivity" />

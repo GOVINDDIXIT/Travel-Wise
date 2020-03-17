@@ -2,14 +2,14 @@ package com.example.needhelp.model;
 
 public class User {
 
-     private String id;
-     private  String username_item;
-     private String imageURL;
-     private String status;
-     private String search;
-     private String email;
-     private String phone;
-     private String organisation;
+    private String id;
+    private String username_item;
+    private String imageURL;
+    private String status;
+    private String search;
+    private String email;
+    private String phone;
+    private String organisation;
 
 
     public User(String id, String username_item, String imageURL, String status, String search, String email, String phone, String organisation) {
@@ -23,7 +23,7 @@ public class User {
         this.organisation = organisation;
     }
 
-    public User(){
+    public User() {
         //default constructor
     }
 

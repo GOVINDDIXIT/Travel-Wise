@@ -8,11 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.SearchView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,20 +33,14 @@ import java.util.List;
 import java.util.Objects;
 
 public class Working extends AppCompatActivity {
-    FloatingActionButton first, second, third, main;
-    LinearLayout linearLayout;
-    TextView firstt, secondd, thirdd;
+    FloatingActionButton main;
     private FirebaseUser firebaseUser;
     private RecyclerViewAdapter adapter;
     private RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
-    Boolean isMenuopen = false;
     private DatabaseReference reference;
     private List<Upload> mUploads;
     private String message;
-    private ImageView search;
-
-    OvershootInterpolator interpolator = new OvershootInterpolator();
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -64,8 +54,8 @@ public class Working extends AppCompatActivity {
         toolbar.setTitleTextColor(Color.WHITE);
         Objects.requireNonNull(getSupportActionBar()).dispatchMenuVisibilityChanged(true);
 
-        initialfabMenu();
-
+        //fab
+        main = findViewById(R.id.main);
 
         main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,11 +147,15 @@ public class Working extends AppCompatActivity {
                 finish();
                 break;
             case R.id.chats:
-                startActivity(new Intent(Working.this, Converstion.class));
+                startActivity(new Intent(Working.this, Conversation.class));
                 finish();
                 break;
             case R.id.myrides:
                 startActivity(new Intent(Working.this, MyRides.class));
+                finish();
+                break;
+            case R.id.mygroups:
+                startActivity(new Intent(Working.this, MyGroups.class));
                 finish();
                 break;
             case R.id.actio_emergncy:
@@ -178,43 +172,6 @@ public class Working extends AppCompatActivity {
         }
         return true;
     }
-
-    private void initialfabMenu() {
-        main = findViewById(R.id.main);
-    }
-
-
-    @SuppressLint({"RestrictedApi", "ResourceAsColor"})
-    private void openMenu() {
-        isMenuopen = !isMenuopen;
-
-        firstt.setVisibility(View.VISIBLE);
-        secondd.setVisibility(View.VISIBLE);
-        thirdd.setVisibility(View.VISIBLE);
-        linearLayout.setAlpha(1);
-
-        main.animate().setInterpolator(interpolator).rotation(45f).setDuration(600).start();
-        first.animate().translationY(0f).alpha(1f).setInterpolator(interpolator).setDuration(600).start();
-        second.animate().translationY(0f).alpha(1f).setInterpolator(interpolator).setDuration(600).start();
-        third.animate().translationY(0f).alpha(1f).setInterpolator(interpolator).setDuration(600).start();
-
-    }
-
-    @SuppressLint({"WrongConstant", "RestrictedApi", "ResourceAsColor"})
-    private void closeMenu() {
-        isMenuopen = !isMenuopen;
-
-        firstt.setVisibility(View.INVISIBLE);
-        secondd.setVisibility(View.INVISIBLE);
-        thirdd.setVisibility(View.INVISIBLE);
-        linearLayout.setAlpha(0);
-        main.animate().setInterpolator(interpolator).rotation(0f).setDuration(600).start();
-        first.animate().translationY(0f).alpha(0f).setInterpolator(interpolator).setDuration(600).start();
-        second.animate().translationY(0f).alpha(0f).setInterpolator(interpolator).setDuration(600).start();
-        third.animate().translationY(0f).alpha(0f).setInterpolator(interpolator).setDuration(600).start();
-
-    }
-
 
     @Override
     public void onBackPressed() {

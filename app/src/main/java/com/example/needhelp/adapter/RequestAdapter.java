@@ -64,10 +64,8 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.Viewhold
                         Toast.makeText(view.getContext(), " Now you can chat ", Toast.LENGTH_SHORT);
                     }
                 });
-
             }
         });
-
     }
 
     @Override

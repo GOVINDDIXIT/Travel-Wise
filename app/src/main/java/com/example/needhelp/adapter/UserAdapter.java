@@ -65,13 +65,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     }
 
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView username;
         LinearLayout linearLayout;
         CircleImageView imageUrl;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             username = itemView.findViewById(R.id.username_item);
             linearLayout = itemView.findViewById(R.id.linearlayout);

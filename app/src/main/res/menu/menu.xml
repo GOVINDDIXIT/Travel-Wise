@@ -18,6 +18,11 @@
             android:icon="@drawable/journey"
             android:id="@+id/myrides"/>
         <item
+            android:title="My Groups"
+            app:showAsAction="never"
+            android:icon="@drawable/ic_group_black_24dp"
+            android:id="@+id/mygroups"/>
+        <item
             android:title="My Profile"
             app:showAsAction="never"
             android:icon="@drawable/profile"

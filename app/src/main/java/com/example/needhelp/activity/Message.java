@@ -36,6 +36,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 public class Message extends AppCompatActivity {
 
@@ -43,7 +44,6 @@ public class Message extends AppCompatActivity {
     private ImageView profile_image;
     private TextView username;
     private ImageView close;
-    private TextView statuss;
 
     FirebaseUser fireBse;
     DatabaseReference reference;
@@ -70,7 +70,7 @@ public class Message extends AppCompatActivity {
         send = findViewById(R.id.send);
         recyclerView = findViewById(R.id.recycler_view_mess);
         makeCall = findViewById(R.id.make_call);
-        phone = getIntent().getExtras().getString("phone");
+        phone = Objects.requireNonNull(getIntent().getExtras()).getString("phone");
 
         makeCall.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +96,6 @@ public class Message extends AppCompatActivity {
         userid = intent.getStringExtra("ID");
         final String imageUrl = getIntent().getExtras().getString("imgUrl");
 
-
         Picasso.get()
                 .load(imageUrl)
                 .resize(100, 100)
@@ -109,7 +108,6 @@ public class Message extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String msg = message.getText().toString();
                 if (!msg.equals("")) {
                     sendMessage(fireBse.getUid(), userid, msg);
@@ -124,14 +122,10 @@ public class Message extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
                 User user = dataSnapshot.getValue(User.class);
                 assert user != null;
-
                 username.setText(user.getUsername_item());
-
                 readMessages(fireBse.getUid(), userid, user.getImageURL());
-
             }
 
             @Override

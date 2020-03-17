@@ -10,10 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.needhelp.Group;
 import com.example.needhelp.R;
-import com.example.needhelp.adapter.MyUploadAdapterr;
-import com.example.needhelp.model.Upload;
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.needhelp.adapter.GroupsAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,48 +24,62 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyRides extends AppCompatActivity {
+public class MyGroups extends AppCompatActivity {
+
     private RecyclerView recyclerView;
-    private FirebaseUser user;
-    private MyUploadAdapterr adapter;
-    private List<Upload> mUploads;
+    //private FirebaseUser user;
+    private GroupsAdapter adapter;
+    private List<Group> mGroups;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_rides);
+        setContentView(R.layout.activity_my_groups);
+
         ImageView close = findViewById(R.id.close);
+        FloatingActionButton faBtn = findViewById(R.id.createGpFab);
 
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MyRides.this, Working.class));
+                startActivity(new Intent(MyGroups.this, Working.class));
                 finish();
+            }
+        });
+
+        faBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MyGroups.this, CreateGroup.class));
             }
         });
 
         recyclerView = findViewById(R.id.Recyclee);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        user = FirebaseAuth.getInstance().getCurrentUser();
 
-        mUploads = new ArrayList<>();
+        mGroups = new ArrayList<>();
+        adapter = new GroupsAdapter(getApplicationContext(), mGroups);
+        recyclerView.setAdapter(adapter);
+        //user = FirebaseAuth.getInstance().getCurrentUser();
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("item_details");
+        readGroups();
+    }
+
+    private void readGroups() {
+
+        mGroups = new ArrayList<>();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("groups");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                mUploads.clear();
-                for (DataSnapshot mdataSnapshot : dataSnapshot.getChildren()) {
-                    Upload upload = mdataSnapshot.getValue(Upload.class);
-                    assert upload != null;
-                    if (user.getUid().equals(upload.getId())) {
-                        mUploads.add(upload);
-                    }
-
-                    adapter = new MyUploadAdapterr(getApplicationContext(), mUploads);
-                    recyclerView.setAdapter(adapter);
+                mGroups.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Group group = snapshot.getValue(Group.class);
+                    mGroups.add(group);
                 }
+                adapter = new GroupsAdapter(getApplicationContext(), mGroups);
+                recyclerView.setAdapter(adapter);
             }
 
             @Override

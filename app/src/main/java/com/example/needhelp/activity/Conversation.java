@@ -12,16 +12,14 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.needhelp.R;
 import com.example.needhelp.fragment.ChatFragment;
 
-public class Converstion extends AppCompatActivity {
-    private ImageView close;
-
+public class Conversation extends AppCompatActivity {
 
     @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_converstion);
-        close = findViewById(R.id.close);
+        ImageView close = findViewById(R.id.close);
 
         ChatFragment f1 = new ChatFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -30,7 +28,7 @@ public class Converstion extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Converstion.this, Working.class));
+                startActivity(new Intent(Conversation.this, Working.class));
                 finish();
             }
         });

@@ -6,9 +6,10 @@ public class Chat {
     private String reciever;
     private String message;
 
-    public Chat(){
+    public Chat() {
 
     }
+
     public Chat(String sender, String reciever, String message) {
         this.sender = sender;
         this.reciever = reciever;
@@ -24,7 +25,7 @@ public class Chat {
     }
 
     public String getReciever() {
-         return reciever;
+        return reciever;
     }
 
     public void setReciever(String reciever) {

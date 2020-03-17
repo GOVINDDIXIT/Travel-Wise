@@ -18,12 +18,9 @@ import java.util.List;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.Viewholder> {
 
-    public static final int MSG_TYPE_LEFT = 0;
-    public static final int MSG_TYPE_RIGHT = 1;
-
-    FirebaseUser firebaseUser;
-
-
+    private static final int MSG_TYPE_LEFT = 0;
+    private static final int MSG_TYPE_RIGHT = 1;
+    private FirebaseUser firebaseUser;
     private Context context;
     private List<Chat> list;
     private String imageurl;
@@ -45,7 +42,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.Viewhold
             View view = LayoutInflater.from(context).inflate(R.layout.chat_left, parent, false);
             return new MessageAdapter.Viewholder(view);
         }
-
     }
 
     @Override
@@ -61,10 +57,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.Viewhold
     }
 
 
-    public class Viewholder extends RecyclerView.ViewHolder {
+    class Viewholder extends RecyclerView.ViewHolder {
         TextView show_message;
 
-        public Viewholder(@NonNull View itemView) {
+        Viewholder(@NonNull View itemView) {
             super(itemView);
             show_message = itemView.findViewById(R.id.show_message);
         }

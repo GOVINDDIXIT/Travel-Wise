@@ -74,18 +74,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         switch (upload.getRide_type()) {
             case "ola":
                 holder.prefered_mode.setImageResource(R.drawable.ola);
-
                 break;
             case "uber":
                 holder.prefered_mode.setImageResource(R.drawable.uber);
-
                 break;
             case "inDrive":
                 holder.prefered_mode.setImageResource(R.drawable.indriver);
-
                 break;
             case "train":
-
                 holder.prefered_mode.setImageResource(R.drawable.train);
                 break;
             case "flight":

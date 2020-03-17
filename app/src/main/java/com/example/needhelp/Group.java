@@ -23,39 +23,37 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Group extends Fragment {
+public class Group  {
 
+    private String id;
+    private String groupName;
+    private String from;
+    private String to;
 
-    FirebaseUser user;
-    private ListView listview;
-    private ArrayAdapter<String> arrayAdapter;
-    private ArrayList<String> list = new ArrayList<>();
-    private View view;
-    private String tt = "";
-    private TextView txt;
-    private List<String> lst;
-
-    private ValueEventListener reference;
+    public Group(String id, String groupName, String from, String to) {
+        this.id = id;
+        this.groupName = groupName;
+        this.from = from;
+        this.to = to;
+    }
 
     public Group() {
         // Required empty public constructor
     }
 
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-
-        view = inflater.inflate(R.layout.fragment_group, container, false);
-        FloatingActionButton fab = view.findViewById(R.id.floating);
-        txt = view.findViewById(R.id.textt);
-        user = FirebaseAuth.getInstance().getCurrentUser();
-
-
-        return view;
-
+    public String getId() {
+        return id;
     }
 
+    public String getFrom() {
+        return from;
+    }
 
+    public String getTo() {
+        return to;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
 }
