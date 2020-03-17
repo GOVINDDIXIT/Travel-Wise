@@ -1,4 +1,4 @@
-package com.example.needhelp;
+package com.example.needhelp.api;
 
 import org.json.JSONArray;
 import org.json.JSONException;

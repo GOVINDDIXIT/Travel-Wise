@@ -1,4 +1,4 @@
-package com.example.needhelp;
+package com.example.needhelp.api;
 
 import com.example.needhelp.geocodingModels.Results;
 

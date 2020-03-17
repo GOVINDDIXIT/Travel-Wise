@@ -5,7 +5,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 
-import com.example.needhelp.PlaceApi;
+import com.example.needhelp.api.PlaceApi;
 
 import java.util.ArrayList;
 
