@@ -56,6 +56,7 @@ public class Myuploads extends AppCompatActivity {
         mUploads = new ArrayList<>();
 
         reference = FirebaseDatabase.getInstance().getReference("item_details");
+        reference.keepSynced(true);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

@@ -43,9 +43,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/good"
+            android:text="govinddixit@gmail.com"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:text="govinddixit@gmail.com"
             android:textStyle="bold" />
 
         <!--        <Button-->

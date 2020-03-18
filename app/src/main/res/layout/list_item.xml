@@ -179,19 +179,19 @@
                     android:layout_height="48dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:gravity="center"
                     android:fontFamily="@font/ps"
+                    android:gravity="center"
                     android:text="Preferred Mode of Travel"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/prefModeImgView"
-                    android:layout_gravity="center"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
-                    android:fontFamily="@font/ps"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="64dp"
+                    android:fontFamily="@font/ps"
                     android:src="@drawable/ola" />
 
 
@@ -256,10 +256,10 @@
                     android:background="@drawable/button_design"
                     android:fontFamily="@font/ps"
                     android:padding="12dp"
-                    android:textSize="12sp"
                     android:text="Accept Request"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-                    android:textColor="#00FF00" />
+                    android:textColor="#00FF00"
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/chatBtn"
@@ -268,13 +268,13 @@
                     android:layout_margin="8dp"
                     android:layout_weight="0.5"
                     android:background="@drawable/button_design"
+                    android:drawableLeft="@drawable/ic_chat_black_24dp"
                     android:fontFamily="@font/ps"
                     android:padding="12dp"
-                    android:textSize="12sp"
-                    android:drawableLeft="@drawable/ic_chat_black_24dp"
                     android:text="Chat"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-                    android:textColor="#fff" />
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
 

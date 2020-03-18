@@ -9,5 +9,5 @@ import retrofit2.http.Query;
 public interface GeoCodingApi {
 
     @GET("json?")
-    Call<Results> getLocation(@Query("address") String fromAdress, @Query("key") String key);
+    Call<Results> getLocation(@Query("address") String fromAddress, @Query("key") String key);
 }

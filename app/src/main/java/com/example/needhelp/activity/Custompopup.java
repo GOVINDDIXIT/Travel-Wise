@@ -30,19 +30,19 @@ import java.util.Objects;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Custompopup extends Activity {
-    private ImageView profile;
     public TextView text;
     public TextView IID;
+    int Current_state = 0;
+    FirebaseUser curretUser;
+    String Currentstate;
+    private ImageView profile;
     private ImageView close;
     private Button chatting;
     private FirebaseUser user;
     private CircleImageView profile_image;
     private String idd;
     private Button request;
-    int Current_state = 0;
-    FirebaseUser curretUser;
     private DatabaseReference reference;
-    String Currentstate;
     private TextView email_item;
     private String title, phone, name, imageUrl, id_email;
 
@@ -80,6 +80,7 @@ public class Custompopup extends Activity {
 
         curretUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference().child("Friend_Request");
+        reference.keepSynced(true);
         idd = getIntent().getExtras().getString("Id");
         imageUrl = getIntent().getExtras().getString("imageUrl");
         id_email = getIntent().getExtras().getString("emaill");

@@ -1,10 +1,10 @@
 package com.example.needhelp.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.needhelp.R;
 
@@ -23,6 +23,6 @@ public class Splash extends AppCompatActivity {
                 finish();
 
             }
-        },5000);
+        }, 5000);
     }
 }

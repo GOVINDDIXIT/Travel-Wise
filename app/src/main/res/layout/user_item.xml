@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
     android:id="@+id/linearlayout"
-    android:padding="5dp"
-    android:layout_margin="5dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="horizontal"
+    android:padding="5dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image_chat"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:civ_circle_background_color="#ffffff"
         android:src="@drawable/pprofile"
-        android:id="@+id/profile_image_chat"
-        />
+        app:civ_circle_background_color="#ffffff" />
 
     <TextView
+        android:id="@+id/username_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/profile_image_chat"
-        android:text="Rohit"
-        android:layout_marginLeft="10dp"
-        android:textSize="18sp"
-        android:fontFamily="@font/good"
         android:layout_gravity="center"
-        android:id="@+id/username_item"/>
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/profile_image_chat"
+        android:fontFamily="@font/good"
+        android:text="Rohit"
+        android:textSize="18sp" />
 
- </LinearLayout>
+</LinearLayout>
 

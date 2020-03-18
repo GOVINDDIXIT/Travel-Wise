@@ -60,6 +60,7 @@ public class MyUploadAdapterr extends RecyclerView.Adapter<MyUploadAdapterr.View
             @Override
             public void onClick(View view) {
                 DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+                ref.keepSynced(true);
                 Query applesQuery = ref.child("item_details").orderByChild("time").equalTo(upload.getTime());
                 applesQuery.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -83,6 +84,7 @@ public class MyUploadAdapterr extends RecyclerView.Adapter<MyUploadAdapterr.View
             @Override
             public void onClick(final View view) {
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                reference.keepSynced(true);
                 Query query = reference.child("item_details").orderByChild("time").equalTo(upload.getTime());
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

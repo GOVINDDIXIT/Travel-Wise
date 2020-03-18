@@ -1,4 +1,3 @@
-
 package com.example.needhelp.geocodingModels;
 
 import com.google.gson.annotations.Expose;

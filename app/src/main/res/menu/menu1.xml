@@ -4,17 +4,15 @@
 
     <item
         android:id="@+id/actio_emergncy"
+        android:icon="@drawable/eee"
         android:title="Emergency"
-        app:showAsAction="always"
-        android:icon="@drawable/eee">
-    </item>
+        app:showAsAction="always"></item>
 
     <item
         android:id="@+id/actio_search"
         android:icon="@drawable/ic_search_black_24dp"
         android:title="Search"
-        app:showAsAction="ifRoom|collapseActionView"
-        app:actionViewClass="android.widget.SearchView">
-    </item>
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView"></item>
 
 </menu>

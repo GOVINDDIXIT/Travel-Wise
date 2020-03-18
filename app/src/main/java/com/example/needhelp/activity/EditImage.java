@@ -41,16 +41,16 @@ import static android.widget.Toast.LENGTH_LONG;
 public class EditImage extends AppCompatActivity {
 
     private static final int REQUEST_WRITE_PERMISSION = 1233;
-    private StorageReference postref;
     DatabaseReference reference;
-    private Uri mImageUri;
-    private ProgressDialog dialog;
-    private StorageTask mUploadTask;
     String url;
     String fileName;
     CircleImageView select_image;
     EditText edit_name, edit_org;
     Button upload;
+    private StorageReference postref;
+    private Uri mImageUri;
+    private ProgressDialog dialog;
+    private StorageTask mUploadTask;
     private ImageView close;
 
     @Override
@@ -74,7 +74,7 @@ public class EditImage extends AppCompatActivity {
 
         postref = FirebaseStorage.getInstance().getReference("uploads");
         reference = FirebaseDatabase.getInstance().getReference("USERS").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
-
+        reference.keepSynced(true);
         select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,6 +113,7 @@ public class EditImage extends AppCompatActivity {
                         public void onSuccess(Uri uri) {
                             String downloadUrl = String.valueOf(uri);
                             DatabaseReference dbref = FirebaseDatabase.getInstance().getReference("USERS").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
+                            dbref.keepSynced(true);
                             HashMap<String, Object> hashMap = new HashMap<>();
                             hashMap.put("imageURL", downloadUrl);
                             hashMap.put("username_item", edit_name.getText().toString());

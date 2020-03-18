@@ -1,8 +1,8 @@
 package com.example.needhelp.model;
 
 public class Upload {
-    private String from;
     public String username_item;
+    private String from;
     private String to;
     private String description;
     private String time;
@@ -32,6 +32,10 @@ public class Upload {
         this.phone = phone;
     }
 
+
+    public Upload() {
+
+    }
 
     public String getPhone() {
         return phone;
@@ -87,10 +91,6 @@ public class Upload {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
-    }
-
-    public Upload() {
-
     }
 
     public String getUsername() {

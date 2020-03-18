@@ -22,10 +22,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.Objects;
 
 public class ResetPassword extends AppCompatActivity {
+    FirebaseAuth auth;
     private EditText emailpass;
     private Button sendd;
     private ImageView close;
-    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

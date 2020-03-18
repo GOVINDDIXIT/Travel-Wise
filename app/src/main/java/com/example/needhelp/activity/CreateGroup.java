@@ -27,7 +27,7 @@ public class CreateGroup extends AppCompatActivity {
         setContentView(R.layout.activity_create_group);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("groups");
-
+        databaseReference.keepSynced(true);
         ImageView close = findViewById(R.id.close);
         gpNameText = findViewById(R.id.group_name_edit_text);
 

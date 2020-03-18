@@ -41,16 +41,8 @@ import java.util.Objects;
 public class Message extends AppCompatActivity {
 
     private static final int REQUEST_CALL = 2342;
-    private ImageView profile_image;
-    private TextView username;
-    private ImageView close;
-
     FirebaseUser fireBse;
     DatabaseReference reference;
-
-    private EditText message;
-    private ImageButton send;
-
     MessageAdapter messageAdapter;
     List<Chat> mchats;
     RecyclerView recyclerView;
@@ -58,6 +50,11 @@ public class Message extends AppCompatActivity {
     ImageView makeCall;
     String phone;
     Intent intent;
+    private ImageView profile_image;
+    private TextView username;
+    private ImageView close;
+    private EditText message;
+    private ImageButton send;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +101,7 @@ public class Message extends AppCompatActivity {
         fireBse = FirebaseAuth.getInstance().getCurrentUser();
         assert userid != null;
         reference = FirebaseDatabase.getInstance().getReference("USERS").child(userid);
+        reference.keepSynced(true);
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,6 +147,7 @@ public class Message extends AppCompatActivity {
 
         mchats = new ArrayList<>();
         reference = FirebaseDatabase.getInstance().getReference("Chats");
+        reference.keepSynced(true);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -189,6 +188,7 @@ public class Message extends AppCompatActivity {
 
     private void sendMessage(String sender, String reciever, String messag) {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        reference.keepSynced(true);
 
         HashMap<String, Object> hashMap = new HashMap<>();
 
@@ -197,6 +197,5 @@ public class Message extends AppCompatActivity {
         hashMap.put("message", messag);
 
         reference.child("Chats").push().setValue(hashMap);
-
     }
 }

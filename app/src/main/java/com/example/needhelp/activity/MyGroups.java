@@ -14,7 +14,6 @@ import com.example.needhelp.Group;
 import com.example.needhelp.R;
 import com.example.needhelp.adapter.GroupsAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -70,6 +69,7 @@ public class MyGroups extends AppCompatActivity {
 
         mGroups = new ArrayList<>();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("groups");
+        reference.keepSynced(true);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

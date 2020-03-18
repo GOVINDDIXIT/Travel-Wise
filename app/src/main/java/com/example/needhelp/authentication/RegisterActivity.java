@@ -30,8 +30,8 @@ import java.util.HashMap;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
-    private FirebaseUser user;
     DatabaseReference root_reference;
+    private FirebaseUser user;
     private Button register;
     private EditText passwordd, emaill, username, phone, organisation;
     private TextView redirecttosignin;
@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
         dialog = new ProgressDialog(this);
         auth = FirebaseAuth.getInstance();
         root_reference = FirebaseDatabase.getInstance().getReference();
-
+        root_reference.keepSynced(true);
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,7 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 String userid = Objects.requireNonNull(auth.getCurrentUser()).getUid();
 
                                 root_reference = FirebaseDatabase.getInstance().getReference("USERS").child(userid);
-
+                                root_reference.keepSynced(true);
                                 HashMap<String, String> hashMap = new HashMap<>();
                                 hashMap.put("id", userid);
                                 hashMap.put("username_item", usernaaam);

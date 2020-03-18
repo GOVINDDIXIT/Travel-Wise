@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="300dp"
-    android:padding="6dp"
     android:id="@+id/messageLayout"
-    android:layout_height="wrap_content">
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dp">
 
     <TextView
+        android:id="@+id/show_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello"
-        android:id="@+id/show_message"
-        android:padding="8dp"
-        android:textSize="15sp"
+        android:layout_marginLeft="5dp"
         android:background="@drawable/background_left"
-        android:layout_marginLeft="5dp"/>
+        android:padding="8dp"
+        android:text="Hello"
+        android:textSize="15sp" />
 
 </RelativeLayout>

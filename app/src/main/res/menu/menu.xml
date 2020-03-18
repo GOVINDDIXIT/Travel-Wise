@@ -2,43 +2,44 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:title="Main Menu"
+    <item
         android:icon="@drawable/ic_more_vert_black_24dp"
+        android:title="Main Menu"
         app:showAsAction="always">
 
-    <menu>
-        <item
-            android:title="My Journeys"
-            app:showAsAction="never"
-            android:icon="@drawable/ic_location_on_black_24dp"
-            android:id="@+id/uploadss"/>
-        <item
-            android:title="My Rides"
-            app:showAsAction="never"
-            android:icon="@drawable/journey"
-            android:id="@+id/myrides"/>
-        <item
-            android:title="My Groups"
-            app:showAsAction="never"
-            android:icon="@drawable/ic_group_black_24dp"
-            android:id="@+id/mygroups"/>
-        <item
-            android:title="My Profile"
-            app:showAsAction="never"
-            android:icon="@drawable/profile"
-            android:id="@+id/profile"/>
+        <menu>
+            <item
+                android:id="@+id/uploadss"
+                android:icon="@drawable/ic_location_on_black_24dp"
+                android:title="My Journeys"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/myrides"
+                android:icon="@drawable/journey"
+                android:title="My Rides"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/mygroups"
+                android:icon="@drawable/ic_group_black_24dp"
+                android:title="My Groups"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/profile"
+                android:icon="@drawable/profile"
+                android:title="My Profile"
+                app:showAsAction="never" />
 
-        <item
-            android:title="Chats"
-            app:showAsAction="never"
-            android:icon="@drawable/comment"
-            android:id="@+id/chats"/>
-        <item
-            android:title="Logout"
-            app:showAsAction="never"
-            android:icon="@drawable/logout"
-            android:id="@+id/logout"/>
-    </menu>
+            <item
+                android:id="@+id/chats"
+                android:icon="@drawable/comment"
+                android:title="Chats"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/logout"
+                android:title="Logout"
+                app:showAsAction="never" />
+        </menu>
     </item>
 
 </menu>

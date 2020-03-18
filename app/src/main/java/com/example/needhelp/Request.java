@@ -34,10 +34,10 @@ import static com.example.needhelp.R.layout;
  * A simple {@link Fragment} subclass.
  */
 public class Request extends Fragment {
+    FirebaseUser user;
     private String ss = "";
     private DatabaseReference ref;
     private Set<String> list;
-    FirebaseUser user;
     private TextView idv;
     private RequestAdapter adapter;
     private List<User> mUsers;
@@ -61,6 +61,7 @@ public class Request extends Fragment {
         recyclerView = v.findViewById(id.RecyclerVieww);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         ref = FirebaseDatabase.getInstance().getReference().child("Friend_Request").child(user.getUid());
+        ref.keepSynced(true);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -97,6 +98,7 @@ public class Request extends Fragment {
     private void showRequest() {
         mUsers = new ArrayList<>();
         ref = FirebaseDatabase.getInstance().getReference("USERS");
+        ref.keepSynced(true);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

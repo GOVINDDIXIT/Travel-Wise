@@ -58,8 +58,8 @@
                 android:id="@+id/group_name_edit_text"
                 android:layout_width="300dp"
                 android:layout_height="match_parent"
-                android:layout_margin="8dp"
                 android:layout_gravity="center"
+                android:layout_margin="8dp"
                 android:hint="Group Name" />
 
             <Button

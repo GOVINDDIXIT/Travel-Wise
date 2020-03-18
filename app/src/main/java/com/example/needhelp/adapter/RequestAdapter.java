@@ -27,10 +27,10 @@ import java.util.List;
 public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.Viewholder> {
 
 
-    private Context context;
-    private List<User> users;
     DatabaseReference databaseReference;
     FirebaseUser userr;
+    private Context context;
+    private List<User> users;
 
     public RequestAdapter(Context context, List<User> users) {
         this.context = context;
@@ -49,6 +49,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.Viewhold
 
         userr = FirebaseAuth.getInstance().getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference("Friend_Request");
+        databaseReference.keepSynced(true);
         final User user = users.get(position);
         final String s = user.getId();
         holder.name.setText(user.getUsername_item());

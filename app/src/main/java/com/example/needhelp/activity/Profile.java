@@ -30,21 +30,21 @@ public class Profile extends AppCompatActivity {
 
     private static final int IMAGE_REQUEST = 1;
     private static final int REQUEST_WRITE_PERMISSION = 12;
+    public ImageView close, photo;
+    String phonee, datetime;
+    DatabaseReference reference;
+    String url;
+    String fileName;
     private TextView name;
     private TextView email;
     private TextView phone;
     private TextView organisation;
     private LinearLayout call;
-    public ImageView close, photo;
     private TextView addinfo;
-    String phonee, datetime;
     private StorageReference postref;
-    DatabaseReference reference;
     private Uri mImageUri;
     private ProgressDialog dialog;
     private StorageTask mUploadTask;
-    String url;
-    String fileName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +63,7 @@ public class Profile extends AppCompatActivity {
         dialog = new ProgressDialog(this);
         postref = FirebaseStorage.getInstance().getReference("uploads");
         reference = FirebaseDatabase.getInstance().getReference("USERS").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-
+        reference.keepSynced(true);
         updateinfo();
 
         addinfo.setOnClickListener(new View.OnClickListener() {

@@ -52,6 +52,7 @@ public class MyRides extends AppCompatActivity {
         mUploads = new ArrayList<>();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("item_details");
+        reference.keepSynced(true);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

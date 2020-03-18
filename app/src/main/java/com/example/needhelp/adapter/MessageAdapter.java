@@ -56,16 +56,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.Viewhold
         return list.size();
     }
 
-
-    class Viewholder extends RecyclerView.ViewHolder {
-        TextView show_message;
-
-        Viewholder(@NonNull View itemView) {
-            super(itemView);
-            show_message = itemView.findViewById(R.id.show_message);
-        }
-    }
-
     @Override
     public int getItemViewType(int position) {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -73,6 +63,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.Viewhold
             return MSG_TYPE_RIGHT;
         } else {
             return MSG_TYPE_LEFT;
+        }
+    }
+
+    class Viewholder extends RecyclerView.ViewHolder {
+        TextView show_message;
+
+        Viewholder(@NonNull View itemView) {
+            super(itemView);
+            show_message = itemView.findViewById(R.id.show_message);
         }
     }
 }

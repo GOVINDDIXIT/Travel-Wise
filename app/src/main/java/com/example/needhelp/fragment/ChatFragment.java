@@ -36,14 +36,11 @@ public class ChatFragment extends Fragment {
     private List<User> mUsers;
     private FirebaseUser firebaseUser;
     private DatabaseReference reference;
-    private TextView te;
-
     private Set<String> userList;
 
     public ChatFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,7 +61,7 @@ public class ChatFragment extends Fragment {
 
         userList = new HashSet<>();
         reference = FirebaseDatabase.getInstance().getReference("Chats");
-
+        reference.keepSynced(true);
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -80,7 +77,6 @@ public class ChatFragment extends Fragment {
                     }
                     if (chat.getReciever().equals(firebaseUser.getUid())) {
                         userList.add(chat.getSender());
-
                     }
                 }
                 readChats();
@@ -101,7 +97,7 @@ public class ChatFragment extends Fragment {
         mUsers = new ArrayList<>();
 
         reference = FirebaseDatabase.getInstance().getReference("USERS");
-
+        reference.keepSynced(true);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

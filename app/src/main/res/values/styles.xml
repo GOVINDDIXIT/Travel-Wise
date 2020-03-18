@@ -12,6 +12,7 @@
     <style name="MyOverflowButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
         <item name="android:tint">#ffffff</item>
     </style>
+
     <style name="AppTheme.Popup">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowCloseOnTouchOutside">true</item>

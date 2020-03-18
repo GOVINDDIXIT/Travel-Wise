@@ -37,11 +37,38 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> implements Filterable {
 
+    int x, i = 0;
     private Context mContext;
     private List<Upload> mUploads;
     private List<Upload> uploadListFiltered;
-    int x, i = 0;
     private String CURRENT_STATE;
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            List<Upload> filteredList = new ArrayList<>();
+            if (charSequence == null || charSequence.length() == 0) {
+                filteredList.addAll(uploadListFiltered);
+            } else {
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+                for (Upload item : uploadListFiltered) {
+                    if (item.getTo().toLowerCase().contains(filterPattern) || item.getFrom().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+
+            mUploads.clear();
+            mUploads.addAll((List) filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public RecyclerViewAdapter(Context mContext, List<Upload> mUploads) {
         this.mContext = mContext;
@@ -119,6 +146,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             public void onClick(View v) {
                 //Toast.makeText(mContext.getApplicationContext(), "To be implemented", Toast.LENGTH_SHORT).show();
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                reference.keepSynced(true);
                 Query query = reference.child("item_details").orderByChild("time").equalTo(upload.getTime());
                 query.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -169,34 +197,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return exampleFilter;
     }
 
-    private Filter exampleFilter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence charSequence) {
-            List<Upload> filteredList = new ArrayList<>();
-            if (charSequence == null || charSequence.length() == 0) {
-                filteredList.addAll(uploadListFiltered);
-            } else {
-                String filterPattern = charSequence.toString().toLowerCase().trim();
-                for (Upload item : uploadListFiltered) {
-                    if (item.getTo().toLowerCase().contains(filterPattern) || item.getFrom().toLowerCase().contains(filterPattern)) {
-                        filteredList.add(item);
-                    }
-                }
-            }
-            FilterResults results = new FilterResults();
-            results.values = filteredList;
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-
-            mUploads.clear();
-            mUploads.addAll((List) filterResults.values);
-            notifyDataSetChanged();
-        }
-    };
-
 //    @Override
 //    public Filter getFilter() {
 //        return new Filter() {
@@ -227,7 +227,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 //            }
 //        };
 //    }
-
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView ffrom, tto, description, username, time;

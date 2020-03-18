@@ -34,10 +34,10 @@ import java.util.Objects;
 
 public class Working extends AppCompatActivity {
     FloatingActionButton main;
+    LinearLayoutManager linearLayoutManager;
     private FirebaseUser firebaseUser;
     private RecyclerViewAdapter adapter;
     private RecyclerView recyclerView;
-    LinearLayoutManager linearLayoutManager;
     private DatabaseReference reference;
     private List<Upload> mUploads;
     private String message;
@@ -78,6 +78,7 @@ public class Working extends AppCompatActivity {
         mUploads = new ArrayList<>();
 
         reference = FirebaseDatabase.getInstance().getReference("item_details");
+        reference.keepSynced(true);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

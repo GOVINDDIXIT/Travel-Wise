@@ -169,9 +169,9 @@
                             android:layout_marginBottom="12dp"
                             android:fontFamily="@font/gotham"
                             android:text="Enter Number of Companions"
-                            android:textStyle="bold"
                             android:textAlignment="center"
-                            android:textSize="18dp" />
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -199,8 +199,8 @@
                             <EditText
                                 android:id="@+id/number_of_companions"
                                 android:layout_width="40dp"
-                                android:layout_marginLeft="24dp"
                                 android:layout_height="wrap_content"
+                                android:layout_marginLeft="24dp"
                                 android:fontFamily="@font/ps"
                                 android:inputType="number"
                                 android:textAlignment="center" />

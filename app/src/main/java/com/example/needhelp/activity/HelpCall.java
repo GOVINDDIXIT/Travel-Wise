@@ -20,9 +20,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.needhelp.api.GeoCodingApi;
 import com.example.needhelp.R;
 import com.example.needhelp.adapter.PlaceAutoSuggestAdapter;
+import com.example.needhelp.api.GeoCodingApi;
 import com.example.needhelp.geocodingModels.AddressComponent;
 import com.example.needhelp.geocodingModels.Geometry;
 import com.example.needhelp.geocodingModels.Location;
@@ -56,34 +56,31 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
-    private EditText from, to, description, companions;
-    private DatabaseReference mDatabaseReference, uploadd;
     ImageView close;
-    private Button upload;
-    private FirebaseAuth auth;
-    private String type_ride;
-    private String username_data, id;
     TextView date_picker, txact_time;
     String value, intent_time = null;
-    private Button ola, uber, inDrive, train, plain, walk;
     String from_intent, to_intent, desc_intent, ride_type_intent, companion_intent;
-    private RadioGroup radioGroup;
-    private RadioButton radioButton;
     RideRequestButton requestButton;
     SessionConfiguration config;
     AutoCompleteTextView autoCompleteTextView;
     AutoCompleteTextView autoCompleteTextView1;
-    private long time;
-
     String Key = "AIzaSyDN2zJbVCS_t-OMKn_g2jnbPB-xOwm2nzQ";
-
     Double fromLatitude = 25.4299;
     Double fromLongitude = 81.7712;
     String fromName = "Source";
-
     Double toLatitude = 26.8005;
     Double toLongitude = 81.0238;
     String toName = "Destination";
+    private EditText from, to, description, companions;
+    private DatabaseReference mDatabaseReference, uploadd;
+    private Button upload;
+    private FirebaseAuth auth;
+    private String type_ride;
+    private String username_data, id;
+    private Button ola, uber, inDrive, train, plain, walk;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
+    private long time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,8 +185,9 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
         username_data = getIntent().getStringExtra("nameee");
 
         mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("item_details");
+        mDatabaseReference.keepSynced(true);
         uploadd = FirebaseDatabase.getInstance().getReference().child("USERS");
-
+        uploadd.keepSynced(true);
         requestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
