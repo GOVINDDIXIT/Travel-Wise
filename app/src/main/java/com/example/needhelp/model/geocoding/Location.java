@@ -1,9 +1,9 @@
-package com.example.needhelp.geocodingModels;
+package com.example.needhelp.model.geocoding;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Southwest {
+public class Location {
 
     @SerializedName("lat")
     @Expose

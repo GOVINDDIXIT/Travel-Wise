@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.needhelp.Group;
+import com.example.needhelp.model.Group;
 import com.example.needhelp.R;
 import com.example.needhelp.adapter.GroupsAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

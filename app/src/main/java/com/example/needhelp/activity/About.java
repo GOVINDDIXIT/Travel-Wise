@@ -1,4 +1,4 @@
-package com.example.needhelp;
+package com.example.needhelp.activity;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.browser.customtabs.CustomTabsIntent;
 
-import com.example.needhelp.activity.Working;
+import com.example.needhelp.R;
 
 public class About extends AppCompatActivity {
     ImageView close;

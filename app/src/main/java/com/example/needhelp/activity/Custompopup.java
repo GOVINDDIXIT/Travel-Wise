@@ -134,7 +134,7 @@ public class Custompopup extends Activity {
                         public void onSuccess(Void aVoid) {
 
                             request.setEnabled(true);
-                            request.setText("Cancel Request");
+                            request.setText("Cancel RequestFragment");
                             Current_state = 1;
 
                         }
@@ -155,7 +155,7 @@ public class Custompopup extends Activity {
                         public void onSuccess(Void aVoid) {
                             request.setEnabled(true);
                             Current_state = 0;
-                            request.setText("Request For Share Ride");
+                            request.setText("RequestFragment For Share Ride");
                         }
                     });
                 }

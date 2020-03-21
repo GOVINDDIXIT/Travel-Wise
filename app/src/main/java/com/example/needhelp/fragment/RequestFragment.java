@@ -1,4 +1,4 @@
-package com.example.needhelp;
+package com.example.needhelp.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.needhelp.adapter.RequestAdapter;
+import com.example.needhelp.model.Regain;
 import com.example.needhelp.model.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -33,7 +34,7 @@ import static com.example.needhelp.R.layout;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Request extends Fragment {
+public class RequestFragment extends Fragment {
     FirebaseUser user;
     private String ss = "";
     private DatabaseReference ref;
@@ -44,7 +45,7 @@ public class Request extends Fragment {
 
     private RecyclerView recyclerView;
 
-    public Request() {
+    public RequestFragment() {
         // Required empty public constructor
     }
 

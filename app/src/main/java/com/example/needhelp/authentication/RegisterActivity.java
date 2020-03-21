@@ -95,7 +95,7 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(RegisterActivity.this, "All Fields Are Necessary", Toast.LENGTH_SHORT).show();
         } else if (Eemail.contains("@")) {
             dialog.setTitle("Creating New Account");
-            dialog.setMessage("Please Wait While We Process Your Request");
+            dialog.setMessage("Please Wait While We Process Your RequestFragment");
             dialog.setCanceledOnTouchOutside(true);
             dialog.show();
 

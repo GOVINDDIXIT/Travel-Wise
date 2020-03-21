@@ -1,4 +1,4 @@
-package com.example.needhelp;
+package com.example.needhelp.model;
 
 public class Block {
     private String name;

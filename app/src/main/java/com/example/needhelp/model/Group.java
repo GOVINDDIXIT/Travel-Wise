@@ -1,4 +1,4 @@
-package com.example.needhelp;
+package com.example.needhelp.model;
 
 
 import androidx.fragment.app.Fragment;

@@ -1,6 +1,6 @@
 package com.example.needhelp.api;
 
-import com.example.needhelp.geocodingModels.Results;
+import com.example.needhelp.model.geocoding.Results;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

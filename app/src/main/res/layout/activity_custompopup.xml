@@ -54,7 +54,7 @@
         <!--            android:textColor="#ffff"-->
         <!--            android:padding="8dp"-->
         <!--            android:fontFamily="@font/good"-->
-        <!--            android:text="Request For Share Ride"-->
+        <!--            android:text="RequestFragment For Share Ride"-->
         <!--            android:id="@+id/request"-->
         <!--            android:background="@drawable/button_design"-->
         <!--            android:layout_marginTop="30dp"-->

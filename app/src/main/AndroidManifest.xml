@@ -35,7 +35,7 @@
             android:name=".activity.Custompopup"
             android:theme="@style/AppTheme.Popup" />
         <activity android:name=".activity.Profile" />
-        <activity android:name=".About" />
+        <activity android:name=".activity.About" />
         <activity android:name=".activity.HelpCall">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
