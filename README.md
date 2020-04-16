@@ -1,3 +1,11 @@
+## Roadmap
+- [X] Directly book Uber from the app
+- [ ] Add feature to create group (*In progress*)
+- [ ] Improve overall UI of the app
+- [ ] Use third party libraries to enhance UX
+- [ ] Improve code quality
+
+
 ## Team Name
 Here for Headout
 
