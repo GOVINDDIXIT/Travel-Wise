@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<io.armcha.elasticview.ElasticView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_marginBottom="8dp"
     android:orientation="vertical"
     android:padding="10dp"
-    app:cardCornerRadius="10dp">
+    android:theme="@style/Theme.MaterialComponents.Light"
+    app:cardCornerRadius="10dp"
+    app:flexibility="1"
+    app:strokeColor="#000"
+    app:strokeWidth="2dp">
 
     <RelativeLayout
         android:id="@+id/relative"
@@ -281,4 +285,4 @@
 
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+</io.armcha.elasticview.ElasticView>

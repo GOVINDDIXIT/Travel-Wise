@@ -41,7 +41,7 @@ public class MyUploadAdapterr extends RecyclerView.Adapter<MyUploadAdapterr.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.myuploads_item, parent, false);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.past_rides_item, parent, false);
         return new ViewHolder(v);
     }
 
