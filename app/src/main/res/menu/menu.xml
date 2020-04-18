@@ -14,11 +14,6 @@
                 android:title="My Journeys"
                 app:showAsAction="never" />
             <item
-                android:id="@+id/myrides"
-                android:icon="@drawable/journey"
-                android:title="My Rides"
-                app:showAsAction="never" />
-            <item
                 android:id="@+id/mygroups"
                 android:icon="@drawable/ic_group_black_24dp"
                 android:title="My Groups"

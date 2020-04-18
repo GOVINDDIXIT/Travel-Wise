@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.needhelp.R;
-import com.example.needhelp.adapter.MyUploadAdapterr;
+import com.example.needhelp.adapter.MyJourneysAdapter;
 import com.example.needhelp.model.Upload;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,11 +24,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Myuploads extends AppCompatActivity {
+public class MyJourneys extends AppCompatActivity {
     private ImageView close;
     private RecyclerView recyclerView;
     private FirebaseUser user;
-    private MyUploadAdapterr adapter;
+    private MyJourneysAdapter adapter;
     private DatabaseReference reference;
     private List<Upload> mUploads;
 
@@ -36,14 +36,14 @@ public class Myuploads extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_myuploads);
+        setContentView(R.layout.activity_my_journeys);
 
         close = findViewById(R.id.close);
 
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Myuploads.this, Working.class));
+                startActivity(new Intent(MyJourneys.this, MainActivity.class));
                 finish();
             }
         });
@@ -68,7 +68,7 @@ public class Myuploads extends AppCompatActivity {
                         mUploads.add(upload);
                     }
 
-                    adapter = new MyUploadAdapterr(getApplicationContext(), mUploads);
+                    adapter = new MyJourneysAdapter(getApplicationContext(), mUploads);
                     recyclerView.setAdapter(adapter);
                 }
             }

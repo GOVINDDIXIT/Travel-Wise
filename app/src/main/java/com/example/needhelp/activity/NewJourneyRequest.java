@@ -55,7 +55,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
+public class NewJourneyRequest extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     ImageView close;
     TextView date_picker, txact_time;
     String value, intent_time = null;
@@ -77,7 +77,7 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
     private FirebaseAuth auth;
     private String type_ride;
     private String username_data, id;
-    private Button ola, uber, inDrive, train, plain, walk;
+    private ImageView ola, uber, inDrive, train, plain, walk;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
     private long time;
@@ -85,16 +85,16 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help_call);
+        setContentView(R.layout.activity_new_journey_request);
 
         Intent intent = getIntent();
         String action = intent.getAction();
         String type = intent.getType();
 
         autoCompleteTextView = findViewById(R.id.from_upload);
-        autoCompleteTextView.setAdapter(new PlaceAutoSuggestAdapter(HelpCall.this, android.R.layout.simple_list_item_1));
+        autoCompleteTextView.setAdapter(new PlaceAutoSuggestAdapter(NewJourneyRequest.this, android.R.layout.simple_list_item_1));
         autoCompleteTextView1 = findViewById(R.id.to_upload);
-        autoCompleteTextView1.setAdapter(new PlaceAutoSuggestAdapter(HelpCall.this, android.R.layout.simple_list_item_1));
+        autoCompleteTextView1.setAdapter(new PlaceAutoSuggestAdapter(NewJourneyRequest.this, android.R.layout.simple_list_item_1));
         from = findViewById(R.id.from_upload);
         to = findViewById(R.id.to_upload);
         description = findViewById(R.id.description);
@@ -177,7 +177,7 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HelpCall.this, Working.class));
+                startActivity(new Intent(NewJourneyRequest.this, MainActivity.class));
                 finish();
             }
         });
@@ -203,7 +203,7 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
 
                 final String fromm = from.getText().toString();
                 final String too = to.getText().toString();
-                final String description = HelpCall.this.description.getText().toString();
+                final String description = NewJourneyRequest.this.description.getText().toString();
                 final String companionss = companions.getText().toString();
                 Calendar c = Calendar.getInstance();
                 // @SuppressLint("SimpleDateFormat") SimpleDateFormat dateformat = new SimpleDateFormat("dd MMM,yy hh:mm aa");
@@ -266,7 +266,7 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
                                             public void onComplete(@NonNull Task<Void> task) {
 
                                                 if (task.isSuccessful()) {
-                                                    Intent intent = new Intent(HelpCall.this, Working.class);
+                                                    Intent intent = new Intent(NewJourneyRequest.this, MainActivity.class);
                                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                                     startActivity(intent);
 
@@ -285,8 +285,8 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
                                             public void onComplete(@NonNull Task<Void> task) {
 
                                                 if (task.isSuccessful()) {
-                                                    Toast.makeText(HelpCall.this, "Edited Successfully", Toast.LENGTH_SHORT).show();
-                                                    Intent intent = new Intent(HelpCall.this, Myuploads.class);
+                                                    Toast.makeText(NewJourneyRequest.this, "Edited Successfully", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(NewJourneyRequest.this, MyJourneys.class);
                                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                                     startActivity(intent);
                                                 }
@@ -333,7 +333,7 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
                                             public void onComplete(@NonNull Task<Void> task) {
 
                                                 if (task.isSuccessful()) {
-                                                    Intent intent = new Intent(HelpCall.this, Working.class);
+                                                    Intent intent = new Intent(NewJourneyRequest.this, MainActivity.class);
                                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                                     startActivity(intent);
                                                 }
@@ -345,8 +345,8 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
                                             public void onComplete(@NonNull Task<Void> task) {
 
                                                 if (task.isSuccessful()) {
-                                                    Toast.makeText(HelpCall.this, "Edited Successfully", Toast.LENGTH_SHORT).show();
-                                                    Intent intent = new Intent(HelpCall.this, Myuploads.class);
+                                                    Toast.makeText(NewJourneyRequest.this, "Edited Successfully", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(NewJourneyRequest.this, MyJourneys.class);
                                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                                     startActivity(intent);
                                                 }
@@ -442,7 +442,7 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
             @Override
             public void onResponse(Call<Results> call, Response<Results> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(HelpCall.this, response.code(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewJourneyRequest.this, response.code(), Toast.LENGTH_SHORT).show();
                 }
                 Results results = response.body();
                 List<Result> resultsList = results.getResults();
@@ -458,7 +458,7 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
 
             @Override
             public void onFailure(Call<Results> call, Throwable t) {
-                Toast.makeText(HelpCall.this, "failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewJourneyRequest.this, "failed", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -477,7 +477,7 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
             @Override
             public void onResponse(Call<Results> call, Response<Results> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(HelpCall.this, response.code(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewJourneyRequest.this, response.code(), Toast.LENGTH_SHORT).show();
                 }
                 Results results = response.body();
                 List<Result> resultsList = results.getResults();
@@ -493,7 +493,7 @@ public class HelpCall extends AppCompatActivity implements DatePickerDialog.OnDa
 
             @Override
             public void onFailure(Call<Results> call, Throwable t) {
-                Toast.makeText(HelpCall.this, "failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewJourneyRequest.this, "failed", Toast.LENGTH_SHORT).show();
             }
         });
     }

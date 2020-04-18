@@ -52,17 +52,6 @@
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
-                <!--                <TextView-->
-                <!--                    android:id="@+id/emailwa"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginStart="15dp"-->
-                <!--                    android:layout_marginTop="10dp"-->
-                <!--                    android:fontFamily="@font/good"-->
-                <!--                    android:text="lit2018068@iiit.ac.in"-->
-                <!--                    android:textSize="14sp"-->
-                <!--                    android:textStyle="bold" />-->
-
                 <TextView
                     android:id="@+id/time"
                     android:layout_width="match_parent"
@@ -213,6 +202,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:gravity="center"
+                    android:fontFamily="@font/ps"
                     android:text="Remaining Companions"
                     android:textSize="20sp"
                     android:textStyle="bold" />

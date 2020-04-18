@@ -10,6 +10,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/appbar"
         android:layout_margin="10dp"
+        android:layoutAnimation="@anim/layout_animation_fall_down"
         android:padding="5dp" />
 
     <com.google.android.material.appbar.AppBarLayout

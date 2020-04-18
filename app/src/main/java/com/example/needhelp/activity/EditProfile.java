@@ -38,11 +38,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.widget.Toast.LENGTH_LONG;
 
-public class EditImage extends AppCompatActivity {
+public class EditProfile extends AppCompatActivity {
 
     private static final int REQUEST_WRITE_PERMISSION = 1233;
     DatabaseReference reference;
-    String url;
     String fileName;
     CircleImageView select_image;
     EditText edit_name, edit_org;
@@ -56,7 +55,7 @@ public class EditImage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_image);
+        setContentView(R.layout.activity_edit_profile);
         upload = findViewById(R.id.final_upload);
 
         select_image = findViewById(R.id.select_post_image_edit);
@@ -98,7 +97,7 @@ public class EditImage extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_WRITE_PERMISSION);
         } else {
-            CropImage.startPickImageActivity(EditImage.this);
+            CropImage.startPickImageActivity(EditProfile.this);
         }
     }
 
@@ -145,7 +144,7 @@ public class EditImage extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == REQUEST_WRITE_PERMISSION && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            CropImage.startPickImageActivity(EditImage.this);
+            CropImage.startPickImageActivity(EditProfile.this);
         }
     }
 

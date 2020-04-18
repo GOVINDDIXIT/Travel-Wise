@@ -28,7 +28,7 @@ public class Conversation extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Conversation.this, Working.class));
+                startActivity(new Intent(Conversation.this, MainActivity.class));
                 finish();
             }
         });

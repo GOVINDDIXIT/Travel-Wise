@@ -34,8 +34,6 @@ public class Custompopup extends Activity {
     public TextView IID;
     int Current_state = 0;
     FirebaseUser curretUser;
-    String Currentstate;
-    private ImageView profile;
     private ImageView close;
     private Button chatting;
     private FirebaseUser user;
@@ -44,7 +42,7 @@ public class Custompopup extends Activity {
     private Button request;
     private DatabaseReference reference;
     private TextView email_item;
-    private String title, phone, name, imageUrl, id_email;
+    private String phone, name, imageUrl, id_email;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -132,15 +130,11 @@ public class Custompopup extends Activity {
                     reference.child(idd).child(curretUser.getUid()).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-
                             request.setEnabled(true);
                             request.setText("Cancel RequestFragment");
                             Current_state = 1;
-
                         }
                     });
-
-
                 }
             });
         }

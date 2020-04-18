@@ -41,7 +41,7 @@ public class MyGroups extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MyGroups.this, Working.class));
+                startActivity(new Intent(MyGroups.this, MainActivity.class));
                 finish();
             }
         });

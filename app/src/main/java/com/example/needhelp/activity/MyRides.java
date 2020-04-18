@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.needhelp.R;
-import com.example.needhelp.adapter.MyUploadAdapterr;
+import com.example.needhelp.adapter.MyJourneysAdapter;
 import com.example.needhelp.model.Upload;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,7 +27,7 @@ import java.util.List;
 public class MyRides extends AppCompatActivity {
     private RecyclerView recyclerView;
     private FirebaseUser user;
-    private MyUploadAdapterr adapter;
+    private MyJourneysAdapter adapter;
     private List<Upload> mUploads;
 
     @Override
@@ -39,7 +39,7 @@ public class MyRides extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MyRides.this, Working.class));
+                startActivity(new Intent(MyRides.this, MainActivity.class));
                 finish();
             }
         });
@@ -64,7 +64,7 @@ public class MyRides extends AppCompatActivity {
                         mUploads.add(upload);
                     }
 
-                    adapter = new MyUploadAdapterr(getApplicationContext(), mUploads);
+                    adapter = new MyJourneysAdapter(getApplicationContext(), mUploads);
                     recyclerView.setAdapter(adapter);
                 }
             }

@@ -53,7 +53,7 @@ public class About extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(About.this, Working.class));
+                startActivity(new Intent(About.this, MainActivity.class));
                 finish();
             }
         });

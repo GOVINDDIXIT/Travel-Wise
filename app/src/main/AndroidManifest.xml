@@ -21,7 +21,7 @@
         <activity android:name=".activity.CreateGroup"></activity>
         <activity android:name=".activity.MyGroups" />
         <activity android:name=".activity.MyRides" />
-        <activity android:name=".activity.EditImage" />
+        <activity android:name=".activity.EditProfile" />
         <activity android:name=".activity.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,14 +29,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Myuploads" />
+        <activity android:name=".activity.MyJourneys" />
         <activity android:name=".activity.Message" />
         <activity
             android:name=".activity.Custompopup"
             android:theme="@style/AppTheme.Popup" />
         <activity android:name=".activity.Profile" />
         <activity android:name=".activity.About" />
-        <activity android:name=".activity.HelpCall">
+        <activity android:name=".activity.NewJourneyRequest">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
@@ -47,10 +47,10 @@
         </activity>
         <activity android:name=".activity.Conversation" />
         <activity android:name=".authentication.ResetPassword" />
-        <activity android:name=".activity.Working" />
+        <activity android:name=".activity.MainActivity" />
         <activity android:name=".authentication.RegisterActivity" />
         <activity android:name=".authentication.LoginActivity" />
-        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.Authentication" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />

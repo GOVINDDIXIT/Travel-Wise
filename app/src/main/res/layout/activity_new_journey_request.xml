@@ -4,7 +4,7 @@
     xmlns:uber="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.HelpCall">
+    tools:context=".activity.NewJourneyRequest">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                         android:textStyle="bold" />
 
 
-                </RelativeLayout>
+                </RelativeLayout>a
 
 
             </androidx.appcompat.widget.Toolbar>
@@ -118,42 +118,42 @@
                             android:gravity="center"
                             android:orientation="horizontal">
 
-                            <Button
+                            <ImageView
                                 android:id="@+id/olaBtn"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
                                 android:layout_marginRight="6dp"
                                 android:background="@drawable/ola" />
 
-                            <Button
+                            <ImageView
                                 android:id="@+id/uberBtn"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
                                 android:layout_marginRight="6dp"
                                 android:background="@drawable/uber" />
 
-                            <Button
+                            <ImageView
                                 android:id="@+id/indriverBtn"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
                                 android:layout_marginRight="6dp"
                                 android:background="@drawable/indriver" />
 
-                            <Button
+                            <ImageView
                                 android:id="@+id/trainBtn"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
                                 android:layout_marginRight="6dp"
                                 android:background="@drawable/train" />
 
-                            <Button
+                            <ImageView
                                 android:id="@+id/flightBtn"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
                                 android:layout_marginRight="6dp"
                                 android:background="@drawable/plane" />
 
-                            <Button
+                            <ImageView
                                 android:id="@+id/walkingBtn"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"

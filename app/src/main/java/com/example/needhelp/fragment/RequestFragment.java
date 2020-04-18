@@ -80,11 +80,6 @@ public class RequestFragment extends Fragment {
 
                 }
                 showRequest();
-//                for(String d : list){
-//                    ss = ss + d;
-//                }
-//                idv.setText(ss);
-
             }
 
             @Override

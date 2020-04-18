@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.needhelp.R;
-import com.example.needhelp.activity.HelpCall;
+import com.example.needhelp.activity.NewJourneyRequest;
 import com.example.needhelp.model.Upload;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,12 +28,12 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MyUploadAdapterr extends RecyclerView.Adapter<MyUploadAdapterr.ViewHolder> {
+public class MyJourneysAdapter extends RecyclerView.Adapter<MyJourneysAdapter.ViewHolder> {
 
     private Context mContext;
     private List<Upload> mUploads;
 
-    public MyUploadAdapterr(Context mContext, List<Upload> mUploads) {
+    public MyJourneysAdapter(Context mContext, List<Upload> mUploads) {
         this.mContext = mContext;
         this.mUploads = mUploads;
     }
@@ -46,7 +46,7 @@ public class MyUploadAdapterr extends RecyclerView.Adapter<MyUploadAdapterr.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
         final Upload upload = mUploads.get(position);
         holder.ffrom.setText(upload.getFrom());
@@ -67,6 +67,7 @@ public class MyUploadAdapterr extends RecyclerView.Adapter<MyUploadAdapterr.View
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                             snapshot.getRef().removeValue();
+                            //notifyItemRemoved(position);
                             Toast.makeText(mContext, "Delete Successfully", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -90,7 +91,7 @@ public class MyUploadAdapterr extends RecyclerView.Adapter<MyUploadAdapterr.View
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            Intent intent = new Intent(view.getContext(), HelpCall.class);
+                            Intent intent = new Intent(view.getContext(), NewJourneyRequest.class);
                             intent.putExtra("value", snapshot.getRef().getKey());
                             intent.putExtra("time", upload.getTime());
                             intent.putExtra("from_intent", upload.getFrom());

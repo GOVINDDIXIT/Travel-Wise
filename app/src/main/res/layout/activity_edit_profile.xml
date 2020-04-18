@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.EditImage">
+    tools:context=".activity.EditProfile">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -68,8 +68,10 @@
                     android:id="@+id/select_post_image_edit"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:background="@drawable/profile_background"
-                    app:civ_circle_background_color="#000000" />
+                    android:background="@drawable/pprofile"
+                    app:civ_circle_background_color="#000000"
+                    app:civ_border_color="#000"
+                    app:civ_border_width="1dp"/>
 
                 <ImageView
                     android:id="@+id/select_new_image"

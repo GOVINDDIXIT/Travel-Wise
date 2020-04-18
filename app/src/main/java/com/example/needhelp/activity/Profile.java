@@ -2,7 +2,6 @@ package com.example.needhelp.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -21,20 +20,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.StorageTask;
 import com.squareup.picasso.Picasso;
 
 import java.util.Objects;
 
 public class Profile extends AppCompatActivity {
 
-    private static final int IMAGE_REQUEST = 1;
-    private static final int REQUEST_WRITE_PERMISSION = 12;
     public ImageView close, photo;
-    String phonee, datetime;
+    String phonee;
     DatabaseReference reference;
     String url;
-    String fileName;
     private TextView name;
     private TextView email;
     private TextView phone;
@@ -42,9 +37,7 @@ public class Profile extends AppCompatActivity {
     private LinearLayout call;
     private TextView addinfo;
     private StorageReference postref;
-    private Uri mImageUri;
     private ProgressDialog dialog;
-    private StorageTask mUploadTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +62,7 @@ public class Profile extends AppCompatActivity {
         addinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Profile.this, EditImage.class);
+                Intent intent = new Intent(Profile.this, EditProfile.class);
                 intent.putExtra("url", url);
                 startActivity(intent);
             }
@@ -77,7 +70,7 @@ public class Profile extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Profile.this, Working.class));
+                startActivity(new Intent(Profile.this, MainActivity.class));
                 finish();
             }
         });

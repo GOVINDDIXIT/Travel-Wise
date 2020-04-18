@@ -41,7 +41,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private Context mContext;
     private List<Upload> mUploads;
     private List<Upload> uploadListFiltered;
-    private String CURRENT_STATE;
     private Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
@@ -152,14 +151,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (i % 2 == 0) {
-                            holder.reqBtn.setText("Cancel RequestFragment");
+                            holder.reqBtn.setText("Cancel Request");
                             holder.reqBtn.setTextColor(Color.RED);
                             x = Integer.parseInt(upload.getCompanions());
                             x--;
                             holder.companion_count.setText(String.valueOf(x));
                             i++;
                         } else {
-                            holder.reqBtn.setText("Accept RequestFragment");
+                            holder.reqBtn.setText("Accept Request");
                             holder.reqBtn.setTextColor(Color.GREEN);
                             x++;
                             holder.companion_count.setText(String.valueOf(x));
