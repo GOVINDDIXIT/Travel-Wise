@@ -1,3 +1,14 @@
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=GOVINDDIXIT/Travel-Wise&identifier=241799846)](https://dependabot.com)
+
+
+## Roadmap
+- [X] Directly book Uber from the app
+- [ ] Add feature to create group (*In progress*)
+- [ ] Improve overall UI of the app
+- [ ] Use third party libraries to enhance UX
+- [ ] Improve code quality
+
+
 ## Team Name
 Here for Headout
 
