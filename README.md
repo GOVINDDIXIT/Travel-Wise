@@ -1,27 +1,9 @@
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=GOVINDDIXIT/Travel-Wise&identifier=241799846)](https://dependabot.com)
 
-
-## Roadmap
-- [X] Directly book Uber from the app
-- [ ] Add feature to create group (*In progress*)
-- [ ] Improve overall UI of the app
-- [ ] Use third party libraries to enhance UX
-- [ ] Improve code quality
-
-
-## Team Name
-Here for Headout
-
-### Team Members
-- [Govind Dixit](https://github.com/GOVINDDIXIT)
-- [Rohit Verma](https://github.com/refactor-droidyy)
-- [Chetan Joshi](https://github.com/ceejay98)
-
 ## Project Name
 ## Travel Wise
 
-<img src="static/logo.jpg" height = "400" width="600">
-
+<img src="static/logo.jpg" height = "200" width="300">
 
 
 *" find travel buddies - save money ! "*
@@ -58,9 +40,19 @@ This application has many features which are useful in many ways. Some of them a
 - Emergency button to send the mail to closed ones with live location.
 - Track of all journeys made by the user is available at single place.
 
-## Future Vision
-- User can search the nearest co travelers by entering his current location.
-- User will be notified about their share of the fare.
+### Note:
+This project is a result of efforts made in a 36 hour hackathon (Hackout) conducted by IIT-BHU. There is still a scope of lot of improvements in term of code quality and features. Feel free to contribute.
+
+**P.S:** We have won 2nd prize in that hackathon 
+
+## Future Vision / Roadmap
+- [X] Directly book Uber from the app
+- [X] Improve overall UI of the app
+- [ ] Add feature to create group (*In progress*)
+- [ ] Use third party libraries to enhance UX
+- [ ] Improve code quality
+- [ ] User can search the nearest co travelers by entering his current location.
+- [ ] User will be notified about their share of the fare.
 
 ## Screenshots of the app
 
