@@ -40,11 +40,6 @@ This application has many features which are useful in many ways. Some of them a
 - Emergency button to send the mail to closed ones with live location.
 - Track of all journeys made by the user is available at single place.
 
-### Note:
-This project is a result of efforts made in a 36 hour hackathon (Hackout) conducted by IIT-BHU. There is still a scope of lot of improvements in term of code quality and features. Feel free to contribute.
-
-**P.S:** We have won 2nd prize in that hackathon 
-
 ## Future Vision / Roadmap
 - [X] Directly book Uber from the app
 - [X] Improve overall UI of the app
