@@ -121,10 +121,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 break;
         }
 
-        Picasso.get()
-                .load(upload.getImageUrl())
-                .resize(100, 100)
-                .into(holder.imageUrl);
+//        Picasso.get()
+//                .load(upload.getImageUrl())
+//                .resize(100, 100)
+//                .into(holder.imageUrl);
 
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
